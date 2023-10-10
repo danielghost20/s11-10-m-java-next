@@ -2,7 +2,7 @@ import React from 'react'
 
 const Registro = () => {
     return (
-        <div>Registro</div>
+        <section className='max-w-max-view w-full'>Registro</section>
     )
 }
 

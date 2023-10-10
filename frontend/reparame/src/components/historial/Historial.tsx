@@ -1,9 +1,9 @@
 import React from 'react'
-import SearchBar from '../searchBar/SearchBar'
+import SearchBar from '../header/searchBar/SearchBar'
 
 const Historial = () => {
     return (
-        <section>
+        <section className='max-w-max-view w-full'>
             <SearchBar />
             <h1>Historial</h1>
         </section>

@@ -8,12 +8,18 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        'light-orange': '#ff983f',
+        'dark-orange': '#ff6600',
       },
-    },
+      maxWidth: {
+        'max-view': '1500px',
+      },
+      minWidth: {
+        'avatarHeader': '2.5rem',
+        'searchBar': '180px'
+      },
+    }
   },
   plugins: [],
 }

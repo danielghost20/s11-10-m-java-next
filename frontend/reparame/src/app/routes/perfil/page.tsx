@@ -3,9 +3,7 @@ import React from 'react'
 
 const PerfilPage = () => {
     return (
-        <div>
-            <Perfil />
-        </div>
+        <Perfil />
     )
 }
 
