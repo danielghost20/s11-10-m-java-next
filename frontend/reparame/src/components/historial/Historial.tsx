@@ -1,5 +1,4 @@
 import React from 'react'
-import SearchBar from '../header/searchBar/SearchBar'
 import Ticket from '../ticket/Ticket'
 
 const Historial = () => {
