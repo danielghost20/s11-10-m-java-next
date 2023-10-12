@@ -2,7 +2,7 @@ import { useAppDispatch } from '@/utils/globalStates/hooks'
 import { verPrestador } from '@/utils/globalStates/features/prestadoresSlice'
 
 
-export const CardServicio = (prestador: any, setId: Function) => {
+export const CardServicio = (prestador: any) => {
     const dispatch = useAppDispatch()
 
     return (

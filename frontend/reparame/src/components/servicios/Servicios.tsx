@@ -17,8 +17,8 @@ const Servicios = () => {
             {prestadores ? prestadores.length > 0 ?
                 <article className='flex flex-col gap-12'>
                     <h1 className='text-2xl'>Aca va la lista de proveedores</h1>
-                    {prestadores.map(res => (
-                        <CardServicio key={res} prestador={res} />
+                    {prestadores.map((res: any) => (
+                        <CardServicio key={res.id} prestador={res} />
                     ))}
                 </article>
                 : <DetalleServicio prestador={prestadores} />
