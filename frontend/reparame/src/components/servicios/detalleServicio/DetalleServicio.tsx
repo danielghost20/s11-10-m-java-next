@@ -1,5 +1,6 @@
 import { useAppDispatch } from '@/utils/globalStates/hooks'
 import { verPrestador } from '@/utils/globalStates/features/prestadoresSlice'
+import Ticket from '@/components/ticket/Ticket'
 
 const DetalleServicio = (prestador: any, setId: Function) => {
     const dispatch = useAppDispatch()
@@ -11,6 +12,7 @@ const DetalleServicio = (prestador: any, setId: Function) => {
             <p>{prestador.prestador.username}</p>
             <p>{prestador.prestador.email}</p>
             <p>{prestador.prestador.phone}</p>
+            <Ticket />
         </div>
     )
 }
