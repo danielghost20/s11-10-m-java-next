@@ -1,15 +1,17 @@
-import Link from 'next/link'
-import React from 'react'
+import { useAppDispatch } from '@/utils/globalStates/hooks'
+import { verPrestador } from '@/utils/globalStates/features/prestadoresSlice'
 
 
-export const CardServicio = (prestador) => {
-    console.log(prestador.prestador)
+export const CardServicio = (prestador: any, setId: Function) => {
+    const dispatch = useAppDispatch()
 
     return (
         <div>
             <p>name {prestador.prestador.name}</p>
             <p>email {prestador.prestador.email}</p>
-            <Link href={'/routes/detalleServicio'}>ver perfil</Link>
+            <button onClick={() => {
+                dispatch(verPrestador(prestador.prestador.id));
+            }}>ver perfil</button>
         </div>
     )
 }
