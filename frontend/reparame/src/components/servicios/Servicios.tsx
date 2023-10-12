@@ -16,7 +16,7 @@ const Servicios = () => {
     }, [id])
     return (
         <section className='flex flex-col max-w-max-view w-full gap-12'>
-            {prestadores[0] || prestadores.id ? prestadores.length > 0 ?
+            {prestadores[0] || prestadores.length === undefined ? prestadores.length > 0 ?
                 <article className='flex flex-col gap-12'>
                     <h1 className='text-2xl'>Aca va la lista de proveedores</h1>
                     {prestadores.map((res: any) => (
