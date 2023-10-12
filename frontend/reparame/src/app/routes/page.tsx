@@ -1,12 +1,6 @@
-import React from 'react'
-
-const page = ({ children,
-}: {
-    children: React.ReactNode
-}) => {
+export default function page() {
     return (
-        { children }
+        null
     )
 }
 
-export default page
