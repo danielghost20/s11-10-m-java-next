@@ -6,6 +6,7 @@ import { getServicios } from '@/utils/requestServicios/getServicios'
 import DetalleServicio from './detalleServicio/DetalleServicio'
 import { useAppSelector } from '@/utils/globalStates/hooks'
 import Skeleton from '../loadingSpinner/Skeleton'
+import Ticket from '../ticket/Ticket'
 
 
 const Servicios = () => {
