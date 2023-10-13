@@ -6,7 +6,6 @@ import { useRef } from 'react';
 const Ticket: React.FC = () => {
     const ticketRef = useRef<HTMLDialogElement>(null)
     const alertRef = useRef<HTMLDialogElement>(null)
-
     const openTicket = () => {
         ticketRef.current != null ? ticketRef.current.showModal() : {}
     }
@@ -16,10 +15,9 @@ const Ticket: React.FC = () => {
     }
     const openAlert = () => {
         alertRef.current != null ? (alertRef.current.showModal(), setTimeout(() => {
-            closeAlert
-        }, 1000)) : {}
+            alertRef.current != null ? alertRef.current.close() : {}
+        }, 2000)) : {}
     }
-
     const closeAlert = () => {
         alertRef.current != null ? alertRef.current.close() : {}
     }
