@@ -1,6 +1,8 @@
+'use client'
 import Image from 'next/image';
 import logo from '../../../public/logo.png'
-import { useRef } from 'react'
+import { useRef } from 'react';
+
 const Ticket: React.FC = () => {
     const ticketRef = useRef<HTMLDialogElement>(null)
     const alertRef = useRef<HTMLDialogElement>(null)
