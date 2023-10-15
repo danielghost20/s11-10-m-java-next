@@ -39,9 +39,9 @@ const Login = () => {
           height={20}
         />
         <button className="flex gap-3 rounded-lg m-auto text-2xl w-[658px] h-[75px] items-center bg-[#F1F0EA] justify-center"><Image src='/google-icon.svg' alt="google-icon" width={24} height={24} />Iniciar sesión con Google</button>
-        <div className="flex w-full gap-2 justify-center items-center mt-10 text-2xl">
-            <span>¿No tienes cuenta?</span>
-            <span className="text-light-orange">Registrate aqui</span>
+        <div className="flex w-full gap-2 justify-center items-center mt-10">
+            <span className=" text-2xl">¿No tienes cuenta?</span>
+            <span className="text-light-orange text-2xl">Registrate aqui</span>
         </div>
       </div>
     </main>
