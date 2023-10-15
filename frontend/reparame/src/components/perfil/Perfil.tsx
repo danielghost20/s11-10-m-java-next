@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BsStarFill } from "react-icons/bs";
 import { BsStar } from "react-icons/bs";
+import ReseñaPrestador from "../reseñaPrestador/ReseñaPrestador";
 
 const Perfil = () => {
   return (
@@ -122,7 +123,7 @@ const Perfil = () => {
         <div className="flex flex-col w-fit mt-6 ml-20 gap-4 p-3">
           <h2 className="text-4xl font-semibold">Reseñas</h2>
 
-          {/* componente de reseñas */}
+          <ReseñaPrestador />
 
           <button className="cursor-pointer font-bold">Ver todas</button>
         </div>
