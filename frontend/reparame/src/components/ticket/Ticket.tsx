@@ -1,19 +1,32 @@
+'use client'
 import Image from 'next/image';
 import logo from '../../../public/logo.png'
+import { useRef } from 'react';
 
-const Ticket = () => {
-    const ticket = document.getElementById("ticket");
-    const modalAlertContract = document.getElementById('modalAlertContrate')
+const Ticket: React.FC = () => {
+    const ticketRef = useRef<HTMLDialogElement>(null)
+    const alertRef = useRef<HTMLDialogElement>(null)
+    const openTicket = () => {
+        ticketRef.current != null ? ticketRef.current.showModal() : {}
+    }
+
+    const closeTicket = () => {
+        ticketRef.current != null ? ticketRef.current.close() : {}
+    }
+    const openAlert = () => {
+        alertRef.current != null ? (alertRef.current.showModal(), setTimeout(() => {
+            alertRef.current != null ? alertRef.current.close() : {}
+        }, 2000)) : {}
+    }
+    const closeAlert = () => {
+        alertRef.current != null ? alertRef.current.close() : {}
+    }
     return (
-        <>
-            <dialog id="ticket">
+        <div>
+            <dialog ref={ticketRef}>
                 <form method="dialog"
                     className='flex flex-col gap-10 p-10'
-                    onSubmit={() => {
-                        console.log('aca iría el post'), modalAlertContract.showModal(), setTimeout(() => {
-                            modalAlertContract.close()
-                        }, 2000);
-                    }}>
+                    onSubmit={openAlert}>
                     <section className='flex flex-col gap-5'>
                         <figure className='flex flex-row w-full justify-between items-center'>
                             <Image src={logo} alt='' width={10} height={10}
@@ -27,24 +40,24 @@ const Ticket = () => {
                         <p className='self-end'>$1000</p>
                     </section>
                     <menu className='flex flex-row gap-10 self-center'>
-                        <button id="cancel" type="reset" onClick={() => { ticket.close() }}>Cancel</button>
+                        <button id="cancel" type="reset" onClick={closeTicket}>Cancel</button>
                         <button type="submit">Confirm</button>
                     </menu>
                 </form>
             </dialog>
             <menu>
-                <button id="updateDetails" onClick={() => { ticket.showModal(); }}>Contratar</button>
+                <button onClick={openTicket}>Contratar</button>
             </menu>
             <dialog
-                onClick={() => { modalAlertContract.close() }}
-                id='modalAlertContrate'
+                onClick={closeAlert}
+                ref={alertRef}
                 className='bg-green-400 p-10 rounded-xl'
             >
                 <span>
                     Contratado con éxito!
                 </span>
             </dialog>
-        </>
+        </div>
 
     )
 }

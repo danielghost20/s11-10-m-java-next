@@ -2,7 +2,7 @@ import { useAppDispatch } from '@/utils/globalStates/hooks'
 import { verPrestador } from '@/utils/globalStates/features/prestadoresSlice'
 import Ticket from '@/components/ticket/Ticket'
 
-const DetalleServicio = (prestador: any, setId: Function) => {
+const DetalleServicio = (prestador: any) => {
     const dispatch = useAppDispatch()
     return (
         <div>
