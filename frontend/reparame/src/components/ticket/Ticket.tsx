@@ -19,15 +19,15 @@ const Ticket: React.FC = () => {
     }
     const openAlert = () => {
         alertRef.current != null ? (alertRef.current.showModal(), setTimeout(() => {
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Gracias por contratar',
-                showConfirmButton: false,
-                timer: 2000
-              })
+            // Swal.fire({
+            //     position: 'center',
+            //     icon: 'success',
+            //     title: 'Gracias por contratar',
+            //     showConfirmButton: false,
+            //     timer: 2000
+            //   })
           alertRef.current != null ? alertRef.current.close() : {}
-        }, 0  )) : {}
+        }, 2000  )) : {}
     }
     const closeAlert = () => {
         alertRef.current != null ? alertRef.current.close() : {}
