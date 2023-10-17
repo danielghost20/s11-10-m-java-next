@@ -13,8 +13,8 @@ function Providers({ children,
     const rute = useParams()
     return (
         <Provider store={store}>
-            {rute.servicios === 'servicios' ? <Header /> : <></>}
-            <main className='flex items-center justify-center'>
+            {rute.servicios === 'servicios' || rute.perfil === 'perfil' ? <Header /> : <></>}
+            <main className='bg-grayUi flex items-center justify-center'>
                 {children}
             </main>
         </Provider>

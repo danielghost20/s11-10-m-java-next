@@ -1,8 +1,9 @@
+import Perfil from '@/components/perfil/Perfil'
 import React from 'react'
 
 const PerfilPage = () => {
     return (
-        <>perfil</>
+        <Perfil />
     )
 }
 
