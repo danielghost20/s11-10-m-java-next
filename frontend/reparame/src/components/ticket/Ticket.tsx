@@ -47,8 +47,8 @@ const Ticket: React.FC = () => {
                     onSubmit={openAlert}>
                     <section className='flex gap-5 w-full'>
                         <div className='flex gap-2'>
-                            <Image src={'/oficina1.jpg'} width={50} height={200} alt='oficina1' className='w-40 h-96 rounded-md' />
-                            <div className='flex flex-col'>
+                            <Image src={'/oficina1.jpg'} width={50} height={200} alt='oficina1' className='w-40 h-full rounded-md' />
+                            <div className='flex flex-col gap-2'>
                                 <Image src={'/oficina2.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
                                 <Image src={'/oficina3.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
 
