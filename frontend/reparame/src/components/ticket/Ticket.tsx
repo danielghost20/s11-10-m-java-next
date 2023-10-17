@@ -58,7 +58,6 @@ const Ticket: React.FC = () => {
                 </span>
             </dialog>
         </div>
-
     )
 }
 
