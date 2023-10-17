@@ -1,5 +1,5 @@
 'use client'
-
+import Swal from 'sweetalert2'
 import Image from 'next/image';
 import { useRef } from 'react';
 import StarsUser from '../icons/StarsUser';
@@ -19,12 +19,21 @@ const Ticket: React.FC = () => {
     }
     const openAlert = () => {
         alertRef.current != null ? (alertRef.current.showModal(), setTimeout(() => {
-            alertRef.current != null ? alertRef.current.close() : {}
-        }, 2000)) : {}
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Gracias por contratar',
+                showConfirmButton: false,
+                timer: 2000
+              })
+          alertRef.current != null ? alertRef.current.close() : {}
+        }, 0  )) : {}
     }
     const closeAlert = () => {
         alertRef.current != null ? alertRef.current.close() : {}
+
     }
+
     let f = new Date()
     let dia = f.getDate()
     let mes = f.getMonth()
@@ -37,11 +46,11 @@ const Ticket: React.FC = () => {
                     className='flex flex-col gap-5 p-10'
                     onSubmit={openAlert}>
                     <section className='flex gap-5 w-full'>
-                        <div className='flex'>
-                            <Image src={'/oficina1.jpg'} width={50} height={200} alt='oficina1' className='w-40 h-96'/>
+                        <div className='flex gap-2'>
+                            <Image src={'/oficina1.jpg'} width={50} height={200} alt='oficina1' className='w-40 h-96 rounded-md' />
                             <div className='flex flex-col'>
-                                <Image src={'/oficina2.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48' />
-                                <Image src={'/oficina3.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48'/>
+                                <Image src={'/oficina2.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
+                                <Image src={'/oficina3.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
 
                             </div>
                         </div>
@@ -50,17 +59,24 @@ const Ticket: React.FC = () => {
                                 <div className="flex gap-4 items-center">
                                     <Image src="/favicon.ico" width={80} height={80} alt='imagen prueba' className='rounded-full' />
                                 </div>
-                                <p>Nombre del Usuario</p>
-                                <span>
-                                    <StarsUser />
-                                    {`${dia}/${mes}/${anio}`}
+                                <div className='flex'>
+
+                                    <p className='text-xl'><b>Jorge -</b></p>
+                                    <p className='text-light-orange text-xl'><b>Cordoba</b></p>
+
+                                </div>
+                                <span className='text-lg text-light-orange'>
+                                    <b>
+                                        <StarsUser />
+                                        {`${dia}/${mes}/${anio}`}
+                                    </b>
                                 </span>
                             </figure>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta culpa nam quia explicabo iure, asperiores minima dolore consequuntur saepe maiores est et modi? Magnam, beatae hic dolore nesciunt dolorem quasi?
-                            Itaque rerum distinctio, suscipit temporibus, libero vel nostrum ea dignissimos, provident eius tempore accusamus blanditiis quod minima vitae officiis modi repellat. Repellat, accusamus consequuntur dolore facere tempora omnis delectus ipsa.</p>
+                            <p className='py-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta culpa nam quia explicabo iure, asperiores minima dolore consequuntur saepe maiores est et modi? Magnam, beatae hic dolore nesciunt dolorem quasi?
+                                Itaque rerum distinctio, suscipit temporibus, facere tempora omnis delectus ipsa.</p>
                             <menu className='flex flex-row gap-10 self-center'>
-                                <Button color="warning" id="cancel" type="reset" onClick={closeTicket}>Cancel</Button>
-                                <Button type="submit">Confirm</Button>
+                                <Button className='w-36 text-white hover:bg-red2 bg-red'   id="cancel" type="reset" onClick={closeTicket}>Cancel</Button>
+                                <Button className='w-36 text-white hover:bg-light-orange bg-orange' type="submit">Confirm</Button>
                             </menu>
                         </div>
 
@@ -77,6 +93,7 @@ const Ticket: React.FC = () => {
             >
                 <span>
                     Contratado con éxito!
+                    
                 </span>
             </dialog>
         </div>
