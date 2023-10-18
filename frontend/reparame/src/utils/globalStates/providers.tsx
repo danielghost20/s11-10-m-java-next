@@ -9,8 +9,8 @@ function Providers({ children,
 }) {
     return (
         <Provider store={store}>
-            <Header />
-            <main className='flex items-center justify-center'>
+            {/*<Header />*/}
+            <main className=''>
                 {children}
             </main>
         </Provider>
