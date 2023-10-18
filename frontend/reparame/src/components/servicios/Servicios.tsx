@@ -17,14 +17,21 @@ const Servicios = () => {
         <section className='flex flex-col max-w-max-view w-full gap-12'>
             {servicios[0] || servicios.length === undefined
                 ? servicios.length > 0 ?
-                    <article className='flex flex-col gap-12'>
+                    <article className='flex flex-col gap-12 bg-rose-100'>
                         <h1 className='text-2xl'>Aca va la lista de proveedores</h1>
                         {servicios.map((res: any) => (
+                            <>
                             <CardServicio key={res.id} servicio={res} />
+                            </>
                         ))}
                     </article>
                     : <DetalleServicio servicio={servicios} />
                 : <><Skeleton /><Skeleton /><Skeleton /></>}
+                <div className='h-screen w-full flex flex-col items-center justify-center'>
+                <CardServicio/>
+                <CardServicio/>
+                <CardServicio/>
+                </div>
         </section>
     )
 }
