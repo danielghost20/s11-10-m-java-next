@@ -28,7 +28,7 @@ const HomePage = () => {
         dispatch(setLog('home'))
     }, [dispatch])
     return (
-        <>
+        <section className='max-w-max-view w-full'>
             {/* <header className="w-full flex items-center bg-light-orange justify-between h-20 px-16">
                 <Link href="/">
                     <Image src={logo} alt="" width={150} height={100} />
@@ -51,7 +51,7 @@ const HomePage = () => {
                     backgroundImage:
                         'url("/images/Part of male construction worker.svg")',
                 }}
-                className="w-full h-80 flex place-content-center place-items-center pt-36"
+                className="w-full h-80 flex flex-col place-content-center place-items-center pt-36"
             >
                 <h1 className="text-[#FFF] text-4xl font-extrabold">
                     ENCONTRA LA SOLUCIÓN A TU PROBLEMA EN UN CLICK
@@ -68,8 +68,8 @@ const HomePage = () => {
                         boxShadow: "0px 0px 3px 1px #FF983F",
                     }}
                     className="w-40 h-36 flex flex-col place-content-center place-items-center"
-                >
-                    <Image src={plomeria} alt="" width={65.5} height={71.3} />
+                ><Link href={'/routes/servicios'}><Image src={plomeria} alt="" width={65.5} height={71.3} /></Link>
+
                     <p className="text-[#FF983F] text-2xl font-light">Plomería</p>
                 </div>
                 <div
@@ -294,7 +294,7 @@ const HomePage = () => {
                     <p className="text-white">Términos y condiciones</p>
                 </div>
             </footer>
-        </>
+        </section>
     );
 };
 
