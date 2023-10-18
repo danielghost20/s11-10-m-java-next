@@ -3,16 +3,22 @@ import Image from "next/image";
 import { MdModeEdit } from 'react-icons/md'
 import { CardProfesiones } from "./cardProfesiones/CardProfesiones";
 import { CardCertificados } from "./cardCertificados/CardCertificados";
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { useAppDispatch } from "@/utils/globalStates/hooks";
+import { setLog } from "@/utils/globalStates/features/pathSlice";
 const Perfil = () => {
+  const dispatch = useAppDispatch()
+  useEffect(() => {
+    dispatch(setLog('perfil'))
+  }, [dispatch])
   const [exp, setExp] = useState('5')
   const [distance, setDistance] = useState('30')
   return (
-    <section className="flex flex-col gap-20 max-w-max-textArea w-full px-10 pt-10 pb-10 text-light-orange bg-grayUi">
+    <section className="flex flex-col gap-10 max-w-max-textArea w-full px-10 pt-10 pb-10 text-light-orange bg-grayUi">
       <h1 className="text-2xl text-black">Configuración de perfil</h1>
       <figure className="flex flex-row items-center gap-20">
         <Image src={'/images/Ellipse 48.png'} alt="avatar User" width={120} height={120} className="rounded" />
-        <figcaption className="text-2xl">{`username`}</figcaption>
+        <figcaption className="text-2xl text-dark-orange">{`username`}</figcaption>
         <button>
           <MdModeEdit className='w-6 h-6' />
         </button>
@@ -35,14 +41,14 @@ const Perfil = () => {
             <input type="range" value={exp} onChange={(e) => { setExp(e.target.value) }} />
           </label>
         </div>
-        <div className="flex flex-row w-full justify-center gap-10">
+        <div className="flex md:flex-row flex-col w-full justify-center gap-10 ">
           <label className="bg-white flex flex-row gap-5 p-5 w-96">
             {'+54'}
-            <input type="text" placeholder={`numero`} />
+            <input type="text" placeholder={`numero`} className="w-full" />
           </label>
           <label className="bg-white flex flex-row gap-5 p-5 w-96">
             DNI
-            <input type="text" placeholder={`numero`} />
+            <input type="text" placeholder={`numero`} className="w-full" />
           </label>
         </div>
       </article>
