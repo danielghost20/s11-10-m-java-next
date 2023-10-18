@@ -29,7 +29,7 @@ const DetalleServicio = (servicio: any) => {
                     />
                 </div>
                 <div className="flex flex-col w-fit items-left mt-6 ml-20 gap-3 p-1">
-                    <span className="flex gap-2 text-orange-500 text-xl">
+                    <span className="flex gap-2 text-light-orange text-xl">
                         <BsStarFill />
                         <BsStarFill />
                         <BsStarFill />
@@ -37,7 +37,7 @@ const DetalleServicio = (servicio: any) => {
                         <BsStar />
                     </span>
                     <h1 className="font-bold text-3xl">Carlos Andres Parra Torre</h1>
-                    <p className="flex gap-3 p-1 text-orange-500 text-lg">
+                    <p className="flex gap-3 p-1 text-light-orange text-lg font-semibold">
                         Electricista
                         <Image
                             alt="icono_electricista"
@@ -70,7 +70,7 @@ const DetalleServicio = (servicio: any) => {
                         </div>
 
                         <div className="flex flex-col gap-3">
-                            <h1 className="font-bold text-3xl text-orange-500">30 Años</h1>
+                            <h1 className="font-bold text-3xl text-light-orange">30 Años</h1>
                             <p className="">
                                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum,
                                 beatae sunt quas et eum sit dicta vero optio tempore, laboriosam
@@ -85,8 +85,8 @@ const DetalleServicio = (servicio: any) => {
 
                 <div className="flex flex-col w-fit mt-10 ml-20">
                     <h2 className="text-4xl font-semibold mb-8">Certificados</h2>
-                    <div className="flex flex-row gap-4">
-                        <div className="cursor-pointer hover:scale-105">
+                    <div className="flex flex-row gap-4 p-2">
+                        <div className="cursor-pointer hover:scale-105 shadow-lg">
                             <Image
                                 alt="certificados"
                                 src={"/images/Frame 152.png"}
@@ -95,7 +95,7 @@ const DetalleServicio = (servicio: any) => {
                             />
                             {/* <Link></Link> */}
                         </div>
-                        <div className="cursor-pointer hover:scale-105">
+                        <div className="cursor-pointer hover:scale-105 shadow-lg">
                             <Image
                                 alt="certificados"
                                 src={"/images/Frame 152.png"}
@@ -104,7 +104,7 @@ const DetalleServicio = (servicio: any) => {
                             />
                             {/* <Link></Link> */}
                         </div>
-                        <div className="cursor-pointer hover:scale-105">
+                        <div className="cursor-pointer hover:scale-105 shadow-lg">
                             <Image
                                 alt="certificados"
                                 src={"/images/Frame 152.png"}
@@ -113,7 +113,7 @@ const DetalleServicio = (servicio: any) => {
                             />
                             {/* <Link></Link> */}
                         </div>
-                        <div className="cursor-pointer hover:scale-105">
+                        <div className="cursor-pointer hover:scale-105 shadow-lg">
                             <Image
                                 alt="certificados"
                                 src={"/images/Frame 152.png"}
@@ -125,17 +125,15 @@ const DetalleServicio = (servicio: any) => {
                     </div>
                 </div>
 
-                <div className="flex flex-col w-fit mt-6 ml-20 gap-4 p-3">
+                <div className="flex flex-col mt-12 items-center gap-4">
                     <h2 className="text-4xl font-semibold">Reseñas</h2>
 
                     <ReseñaPrestador />
-
-                    <button className="cursor-pointer font-bold">Ver todas</button>
                 </div>
             </div>
-            <Ticket />
+            {/* <Ticket /> */}
         </section>
-    )
-}
+    );
+};
 
-export default DetalleServicio
+export default DetalleServicio;

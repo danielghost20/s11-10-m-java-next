@@ -26,7 +26,7 @@ const Servicios = () => {
                     : <DetalleServicio servicio={servicios} />
                 : <><Skeleton /><Skeleton /><Skeleton /></>}
         </section>
-    )
-}
+    );
+};
 
-export default Servicios
+export default Servicios;
