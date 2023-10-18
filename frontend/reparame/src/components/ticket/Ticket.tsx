@@ -1,7 +1,11 @@
 'use client'
+import Swal from 'sweetalert2'
 import Image from 'next/image';
-import logo from '../../../public/logo.png'
 import { useRef } from 'react';
+import StarsUser from '../icons/StarsUser';
+import { Button } from '@nextui-org/react';
+// import { setInterval } from 'timers/promises';
+
 
 const Ticket: React.FC = () => {
     const ticketRef = useRef<HTMLDialogElement>(null)
@@ -15,34 +19,68 @@ const Ticket: React.FC = () => {
     }
     const openAlert = () => {
         alertRef.current != null ? (alertRef.current.showModal(), setTimeout(() => {
-            alertRef.current != null ? alertRef.current.close() : {}
-        }, 2000)) : {}
+            // Swal.fire({
+            //     position: 'center',
+            //     icon: 'success',
+            //     title: 'Gracias por contratar',
+            //     showConfirmButton: false,
+            //     timer: 2000
+            //   })
+          alertRef.current != null ? alertRef.current.close() : {}
+        }, 2000  )) : {}
     }
     const closeAlert = () => {
         alertRef.current != null ? alertRef.current.close() : {}
+
     }
+
+    let f = new Date()
+    let dia = f.getDate()
+    let mes = f.getMonth()
+    let anio = f.getFullYear()
+
     return (
         <div>
             <dialog ref={ticketRef}>
                 <form method="dialog"
-                    className='flex flex-col gap-10 p-10'
+                    className='flex flex-col gap-5 p-10'
                     onSubmit={openAlert}>
-                    <section className='flex flex-col gap-5'>
-                        <figure className='flex flex-row w-full justify-between items-center'>
-                            <Image src={logo} alt='' width={10} height={10}
-                                className='rounded-full  bg-white text-black text-xs items-center border-2 w-10 h-10' />
-                            <span>⭐⭐⭐⭐</span>
-                        </figure>
-                        <p>este seria el ticket</p>
-                        <p>supongamos que aca van los datos del prestador</p>
-                        <p>y aca los datos del servicio</p>
-                        <p>seria como un contrato</p>
-                        <p className='self-end'>$1000</p>
+                    <section className='flex gap-5 w-full'>
+                        <div className='flex gap-2'>
+                            <Image src={'/oficina1.jpg'} width={50} height={200} alt='oficina1' className='w-40 h-full rounded-md' />
+                            <div className='flex flex-col gap-2'>
+                                <Image src={'/oficina2.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
+                                <Image src={'/oficina3.jpg'} width={50} height={100} alt='oficina1' className='w-40 h-48 rounded-md' />
+
+                            </div>
+                        </div>
+                        <div className='w-96'>
+                            <figure className='flex flex-row  justify-between items-center'>
+                                <div className="flex gap-4 items-center">
+                                    <Image src="/favicon.ico" width={80} height={80} alt='imagen prueba' className='rounded-full' />
+                                </div>
+                                <div className='flex'>
+
+                                    <p className='text-xl'><b>Jorge -</b></p>
+                                    <p className='text-light-orange text-xl'><b>Cordoba</b></p>
+
+                                </div>
+                                <span className='text-lg text-light-orange'>
+                                    <b>
+                                        <StarsUser />
+                                        {`${dia}/${mes}/${anio}`}
+                                    </b>
+                                </span>
+                            </figure>
+                            <p className='py-6'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta culpa nam quia explicabo iure, asperiores minima dolore consequuntur saepe maiores est et modi? Magnam, beatae hic dolore nesciunt dolorem quasi?
+                                Itaque rerum distinctio, suscipit temporibus, facere tempora omnis delectus ipsa.</p>
+                            <menu className='flex flex-row gap-10 self-center'>
+                                <Button className='w-36 text-white hover:bg-red2 bg-red'   id="cancel" type="reset" onClick={closeTicket}>Cancel</Button>
+                                <Button className='w-36 text-white hover:bg-light-orange bg-orange' type="submit">Confirm</Button>
+                            </menu>
+                        </div>
+
                     </section>
-                    <menu className='flex flex-row gap-10 self-center'>
-                        <button id="cancel" type="reset" onClick={closeTicket}>Cancel</button>
-                        <button type="submit">Confirm</button>
-                    </menu>
                 </form>
             </dialog>
             <menu>
@@ -55,10 +93,10 @@ const Ticket: React.FC = () => {
             >
                 <span>
                     Contratado con éxito!
+                    
                 </span>
             </dialog>
         </div>
-
     )
 }
 
