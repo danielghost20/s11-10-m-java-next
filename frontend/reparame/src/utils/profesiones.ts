@@ -1,6 +1,6 @@
 import { BsFillLightningFill } from 'react-icons/bs'
 import { FaKey } from 'react-icons/fa'
-export const links = [
+export const profesiones = [
     {
         label: 'Electricista',
         icon: BsFillLightningFill
