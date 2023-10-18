@@ -4,8 +4,9 @@ import { CardServicio } from './cardServicio/CardServicio'
 import { useEffect, useState } from 'react'
 import { getServicios } from '@/utils/requestServicios/getServicios'
 import DetalleServicio from './detalleServicio/DetalleServicio'
-import { useAppSelector } from '@/utils/globalStates/hooks'
+import { useAppDispatch, useAppSelector } from '@/utils/globalStates/hooks'
 import Skeleton from '../loadingSpinner/Skeleton'
+import { setLog } from '@/utils/globalStates/features/pathSlice'
 
 const Servicios = () => {
     const [servicios, setServicios] = useState([])
@@ -13,6 +14,10 @@ const Servicios = () => {
     useEffect(() => {
         getServicios(setServicios, id)
     }, [id])
+    const dispatch = useAppDispatch()
+    useEffect(() => {
+        dispatch(setLog('servicios'))
+    }, [dispatch])
     return (
         <section className='flex flex-col max-w-max-view w-full gap-12'>
             {servicios[0] || servicios.length === undefined
