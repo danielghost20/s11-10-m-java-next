@@ -32,7 +32,7 @@ export const CardServicio = (servicios: any) => {
         </div>
         <div>
           <Link
-            href="/"
+            href="/routes/detalle-perfil"
             className="mt-3 border-b-2 border-dark-orange text-dark-orange max-h-max"
           >
             Ver Perfil
