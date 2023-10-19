@@ -11,8 +11,8 @@ export const CardServicio = (servicios: any) => {
             <button onClick={() => {
                 dispatch(verServicios(servicios.servicios.id));
             }}>ver perfil</button>
-            <p>name {servicios.servicios.name}</p>
-            <p>email {servicios.servicios.email}</p>
+            <p>name </p>
+            <p>email </p>
             <Ticket />
         </div>
     )
