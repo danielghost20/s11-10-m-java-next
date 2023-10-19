@@ -9,6 +9,9 @@ export const CardServicio = (servicios: any) => {
 
     return (
         <div className="rounded-xl border-2 p-4 max-w-5xl m-auto border-gray-300">
+          <button onClick={() => {
+                dispatch(verServicios(servicios.servicios.id));
+            }}>ver perfil</button>
             <div className="flex justify-between">
                 <div className="flex gap-4">
                     <div className="w-20 h-20 rounded-full border-2 p-4 border-black" />
@@ -38,8 +41,8 @@ export const CardServicio = (servicios: any) => {
             </p>
             <div className="flex w-full justify-between items-center mt-2">
                 <p>lorego</p>
-                <Link href='/' className="p-2 border-dark-orange border-2 rounded-md text-dark-orange">Contactar</Link>
-            </div>
+               <Ticket />
+            </div>   
         </div>
     );
 };

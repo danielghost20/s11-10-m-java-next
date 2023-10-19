@@ -174,7 +174,7 @@ const HomePage = () => {
                             borderRadius: "15px",
                             opacity: "",
                         }}
-                        className="bg-light-orange flex place-content-center place-items-center"
+                        className="bg-mega-light-orange flex place-content-center place-items-center"
                     >
                         <Image src={mapaarg} alt="" width={459} height={318} className="" />
                     </div>

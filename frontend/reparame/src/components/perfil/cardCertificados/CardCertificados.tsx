@@ -1,5 +1,4 @@
 'use client'
-import { links } from "@/utils/profesiones"
 import { BsFillPlusSquareFill } from 'react-icons/bs'
 export function CardCertificados() {
     return (

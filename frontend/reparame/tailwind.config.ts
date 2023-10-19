@@ -11,6 +11,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        'mega-light-orange': '#fac79a',
         'light-orange': '#ff983f',
         'dark-orange': '#ff6600',
         'red': '#fca5a5',
@@ -19,7 +20,7 @@ const config: Config = {
         'grayUi': '#f5f5f5',
       },
       maxWidth: {
-        'max-view': '1500px',
+        'max-view': '1520px',
         'max-textArea': '778px',
       },
       minWidth: {
