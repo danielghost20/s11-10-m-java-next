@@ -4,12 +4,15 @@ import Image from "next/image";
 import Input from "./input/Input";
 import { useAppDispatch } from "@/utils/globalStates/hooks";
 import { setLog } from "@/utils/globalStates/features/pathSlice";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const dispatch = useAppDispatch()
   useEffect(() => {
     dispatch(setLog('login'))
   }, [dispatch])
+
+  const router = useRouter()
   return (
     <section className="w-full flex items-center h-screen justify-center ">
       <div className=" max-w-4xl w-full">
@@ -32,6 +35,7 @@ const Login = () => {
             valueContainerName="2"
           />
           <button
+          onClick={() => {router.push('/')}}
             className="bg-light-orange mt-7 w-60 h-[60px] text-2xl text-white rounded-xl shadow-md shadow-gray-400"
             type="submit"
           >

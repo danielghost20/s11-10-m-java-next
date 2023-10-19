@@ -81,7 +81,9 @@ const HomePage = () => {
                     }}
                     className="w-40 h-36 flex flex-col place-content-center place-items-center"
                 >
+                    <Link href='/routes/servicios'>
                     <Image src={electricidad} alt="" width={65.5} height={71.3} />
+                    </Link>
                     <p className="text-[#FF983F] text-2xl font-light">Electricidad</p>
                 </div>
                 <div
