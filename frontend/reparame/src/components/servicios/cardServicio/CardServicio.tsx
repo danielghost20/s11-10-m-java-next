@@ -9,7 +9,7 @@ export const CardServicio = (servicios: any) => {
 
     return (
         <div className="rounded-xl border-2 p-4 max-w-5xl m-auto border-gray-300">
-          <button onClick={() => {
+            <button onClick={() => {
                 dispatch(verServicios(servicios.servicios.id));
             }}>ver perfil</button>
             <div className="flex justify-between">
@@ -41,8 +41,8 @@ export const CardServicio = (servicios: any) => {
             </p>
             <div className="flex w-full justify-between items-center mt-2">
                 <p>lorego</p>
-               <Ticket />
-            </div>   
+                <Ticket />
+            </div>
         </div>
     );
 };
