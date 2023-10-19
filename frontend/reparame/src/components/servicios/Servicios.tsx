@@ -9,7 +9,7 @@ import Skeleton from '../loadingSpinner/Skeleton'
 import { setLog } from '@/utils/globalStates/features/pathSlice'
 
 const Servicios = () => {
-    const [servicios, setServicios] = useState([])
+    const [servicios, setServicios] = useState([1])
     const id = useAppSelector(state => state.servicios.value)
     useEffect(() => {
         getServicios(setServicios, id)
