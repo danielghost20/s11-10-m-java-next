@@ -9,7 +9,7 @@ import Skeleton from '../loadingSpinner/Skeleton'
 import { setLog } from '@/utils/globalStates/features/pathSlice'
 
 const Servicios = () => {
-    const [servicios, setServicios] = useState([])
+    const [servicios, setServicios] = useState([1])
     const id = useAppSelector(state => state.servicios.value)
     useEffect(() => {
         getServicios(setServicios, id)
@@ -20,8 +20,7 @@ const Servicios = () => {
     }, [dispatch])
     return (
         <section className='flex flex-col max-w-max-view w-full gap-12'>
-            {/* {servicios[0] || servicios.length === undefined */}
-            {1 === 1
+            {servicios[0] || servicios.length === undefined
                 ? servicios.length > 0 ?
                     <article className='flex flex-col gap-12'>
                         <h1 className='text-2xl'>Aca va la lista de proveedores</h1>
